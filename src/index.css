@@ -56,3 +56,16 @@ code {
   font-size: 40px;
   border-radius: 18px;
 }
+
+.dropdown-toggle:after {
+  border: 0;
+  border: solid #6d6f71;
+  border-width: 0 1px 1px 0;
+  display: inline-block;
+  padding: 2px;
+  transform: translate(-50%) rotate(45deg);
+  -webkit-transform: translate(-50%) rotate(45deg);
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+}

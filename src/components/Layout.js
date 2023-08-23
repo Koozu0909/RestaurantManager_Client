@@ -5,6 +5,7 @@ import MainLayout from "./Main/MainLayout";
 import Login from "./Login&Resgister/Login";
 import Footer from "./Footer/Footer";
 import Resgister from "./Login&Resgister/Resgister";
+import FoodLayout from "./FoodDetail/FoodLayout";
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
       <div className="h-screen w-full">
         <Header/>
         <Routes>
+          <Route path="/food/:encodedId" element={<FoodLayout />} />
           <Route path="/" element={<MainLayout />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Resgister />} />
