@@ -3,7 +3,7 @@ import { FaMagnifyingGlass } from "react-icons/fa6";
 import Popup from "reactjs-popup";
 import bgSearch from "./../../../images/bg-search.png";
 
-export default function PopupSreach() {
+export default function PopupSearch() {
     const inputRef = useRef(null);
 
   useEffect(() => {

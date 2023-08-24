@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom';
 const salt = 'your_secret_salt';
 const hashids = new Hashids(salt);
 
-export default function MainItem({ foodItem }) {
+export default function MainItem({ foodItem,foodLocation,foodType }) {
   const encodedId = hashids.encode(foodItem.id);
   const id = hashids.decode(encodedId);
   console.log(id)
 
   return (
-    <Link to={`/food/${encodedId}`}> 
+    <Link to={`/${foodLocation}/${foodType}/${encodedId}`}> 
       <div className='w-52 h-56 bg-blue-50 rounded-md overflow-hidden cursor-pointer shadow hover:shadow-2xl' key={foodItem.Id}>
         <div className='w-full h-3/5'>
           <img className='w-full h-full' src={foodItem.imageURL} alt="" />
