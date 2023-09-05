@@ -15,10 +15,10 @@ export default function UserDropDown() {
     removeCookie("token", { path: "/" });
     removeCookie("user", { path: "/" });
     dispatch({
-        "type": "logout"
-    })
+      type: "logout",
+    });
     navigate("/login");
-}
+  };
 
   return (
     <Transition
@@ -29,36 +29,52 @@ export default function UserDropDown() {
       leave="transition ease-in duration-75"
       leaveFrom="transform opacity-100 scale-100"
       leaveTo="transform opacity-0 scale-95"
-   
     >
-      <Menu.Items static className="absolute right-7 mt-2 w-36 origin-top-right divide-y divide-gray-100 bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+      <Menu.Items
+        static
+        className="absolute right-7 mt-2 w-36 origin-top-right divide-y divide-gray-100 bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+      >
         <div className=" flex flex-wrap ">
-          
-            <Menu.Item className="hover:bg-gray-400 w-full h-full" >
+          <Menu.Item className="hover:bg-gray-400 w-full h-full">
+            <div
+              className={`group flex w-2/6 items-center px-2 py-2 text-sm cursor-pointer `}
+              onClick={() => {
+                navigate("/user/profile");
+              }}
+            >
+              Thông tin cá nhân
+            </div>
+          </Menu.Item>
+          <Menu.Item className="hover:bg-gray-400 w-full h-full">
+            <div
+              className={`group flex w-2/6 items-center px-2 py-2 text-sm cursor-pointer `}
+            >
+              Lịch sử giao dịch
+            </div>
+          </Menu.Item>
+          {user.userRole === "ROLE_OWNER" || user.userRole === "ROLE_ADMIN" ? (
+            <Menu.Item className="hover:bg-gray-400 w-full h-full">
               <div
-                className={`group flex w-2/6 items-center px-2 py-2 text-sm cursor-pointer `}
+                className={`group flex w-2/6 items-center px-2 py-2 text-sm cursor-pointer`}
+                onClick={() => {
+                  navigate("/owner");
+                }}
               >
-               Thông tin cá nhân
+                Quản lý cửa hàng
               </div>
             </Menu.Item>
-            <Menu.Item className="hover:bg-gray-400 w-full h-full" >
-              <div
-                className={`group flex w-2/6 items-center px-2 py-2 text-sm cursor-pointer `}
-              >
-               Lịch sử giao dịch
-              </div>
-            </Menu.Item>
-            <Menu.Item className="hover:bg-gray-400 w-full h-full" >
-              <div
-                className={`group flex w-2/6 items-center px-2 py-2 text-sm cursor-pointer `}
-                onClick={logout}
-              >
-                Đăng xuất
-              </div>
-            </Menu.Item>
+          ) : null}
+
+          <Menu.Item className="hover:bg-gray-400 w-full h-full">
+            <div
+              className={`group flex w-2/6 items-center px-2 py-2 text-sm cursor-pointer `}
+              onClick={logout}
+            >
+              Đăng xuất
+            </div>
+          </Menu.Item>
         </div>
       </Menu.Items>
     </Transition>
-   
   );
 }

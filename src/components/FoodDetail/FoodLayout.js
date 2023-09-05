@@ -3,6 +3,7 @@ import {useParams } from "react-router-dom";
 import axios from "axios";
 import Hashids from "hashids";
 import FoodMainDetail from "./FoodDetail_components/FoodMainDetail";
+import FoodContent from "./FoodDetail_components/FoodContent";
 
 const salt = "your_secret_salt";
 const hashids = new Hashids(salt);
@@ -37,6 +38,7 @@ export default function FoodLayout() {
   return (
     <div className="w-full h-full bg-common-bg">
       <FoodMainDetail foodDetail={foodDetail} encodedId={encodedId} />
+      <FoodContent/>
     </div>
   );
 }

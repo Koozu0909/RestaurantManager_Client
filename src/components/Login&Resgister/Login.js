@@ -24,29 +24,25 @@ export default function Login() {
     const loginUrl = "http://localhost:8080/RestaurantManager/api/login";
     const currentUserUrl =
       "http://localhost:8080/RestaurantManager/api/current-user";
-
     try {
       const response = await axios.post(loginUrl, {
         username: data.username,
         password: data.password,
       });
       console.log(response.error);
-     
-
       setCookie("token", response.data, { path: "/" });
-
       if (response.data !== " ") {
         const userResponse = await axios.post(currentUserUrl, {
           token: response.data,
         });
         console.log(userResponse.data);
         setCookie("user", userResponse.data, { path: "/" });
-
         dispatch({
           type: "login",
           payload: userResponse,
         });
         toast.success("Đăng nhập thành công");
+        window.location.reload(true);
         navigate("/");
       }
     } catch (error) {

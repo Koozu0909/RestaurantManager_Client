@@ -8,8 +8,9 @@ export default function MainContent() {
   const currentLocationPath = location.pathname;
   const values = currentLocationPath.split("/");
 
-  const foodLocation = values[1];
   const foodType = values[2];
+  const foodLocation =  values[1];
+
 
   const [foodItems, setFoodItems] = useState([]);
 

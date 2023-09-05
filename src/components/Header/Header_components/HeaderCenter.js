@@ -66,7 +66,7 @@ export default function HeaderCenter() {
           </div>
         </div>
       </div>
-      <div className="w-2/5 h-full flex items-center justify-center">
+      <div className="w-2/5  h-full flex items-center justify-center">
         <div className="w-5/6 h-2/5 flex items-center justify-end">
           <PopupSearch />
         </div>
