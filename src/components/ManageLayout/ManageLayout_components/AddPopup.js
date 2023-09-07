@@ -1,6 +1,6 @@
 import { Dialog, Transition } from "@headlessui/react";
 import axios from "axios";
-import React, { Fragment, useEffect, useRef, useState } from "react";
+import React, { Fragment, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 
@@ -14,7 +14,7 @@ export default function AddPopup({
   restaurant,
   foodItems,
 }) {
-  const fileInputRef = useRef(null);
+  const fileInputRef = useRef(null); 
   const [selectedFile, setSelectedFile] = useState(null);
   const [selectedParentCate, setSelectedParentCate] = useState(2);
 

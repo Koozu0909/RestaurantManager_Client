@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios"; // Import thư viện Axios
+import axios from "axios"; 
 import MainItem from "./MainContent_components/MainItem";
 import { useLocation } from "react-router-dom";
 

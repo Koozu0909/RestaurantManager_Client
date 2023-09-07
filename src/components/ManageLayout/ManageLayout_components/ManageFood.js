@@ -66,7 +66,7 @@ export default function ManageFood() {
       accessorKey: "name",
       footer: "Tên",
     },
-    {
+    { 
       header: "Giá",
       accessorKey: "price",
       footer: "Giá",

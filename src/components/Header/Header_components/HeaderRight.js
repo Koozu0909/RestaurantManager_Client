@@ -6,7 +6,9 @@ import { Menu } from "@headlessui/react";
 import UserDropDown from "./UserDropDown";
 
 export default function HeaderRight() {
-  const [user, dispatch] = useContext(MyUserContext);
+  const [user] = useContext(MyUserContext);
+
+
 
   return (
     <div className="w-1/5 h-full  flex items-center justify-end ">

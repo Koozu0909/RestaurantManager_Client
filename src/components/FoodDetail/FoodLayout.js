@@ -38,7 +38,7 @@ export default function FoodLayout() {
   return (
     <div className="w-full h-full bg-common-bg">
       <FoodMainDetail foodDetail={foodDetail} encodedId={encodedId} />
-      <FoodContent/>
+      <FoodContent foodDetail={foodDetail}/>
     </div>
   );
 }
